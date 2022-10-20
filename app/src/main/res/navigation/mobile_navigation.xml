@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="xyz.theadityamishra.trucktracking.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <argument
+            android:name="UserType"
+            app:argType="string"
+            android:defaultValue="Z" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="xyz.theadityamishra.trucktracking.ui.UserDashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_user_dashboard" />
+    <fragment
+        android:id="@+id/driverFragment"
+        android:name="xyz.theadityamishra.trucktracking.ui.DriverFragment"
+        android:label="fragment_driver"
+        tools:layout="@layout/fragment_driver" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="xyz.theadityamishra.trucktracking.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_driverFragment"
+            app:destination="@id/driverFragment" />
+        <argument
+            android:name="userType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_profileFragment_to_newIssueFragment"
+            app:destination="@id/newIssueFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newIssueFragment"
+        android:name="xyz.theadityamishra.trucktracking.ui.NewIssueFragment"
+        android:label="fragment_new_issue"
+        tools:layout="@layout/fragment_new_issue" />
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="xyz.theadityamishra.trucktracking.ui.AdminFragment"
+        android:label="fragment_admin"
+        tools:layout="@layout/fragment_admin" >
+        <action
+            android:id="@+id/action_adminFragment_to_driverFragment"
+            app:destination="@id/driverFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_showIssuesFragment"
+            app:destination="@id/showIssuesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showIssuesFragment"
+        android:name="xyz.theadityamishra.trucktracking.ui.ShowIssuesFragment"
+        android:label="fragment_show_issues"
+        tools:layout="@layout/fragment_show_issues" />
+</navigation>
